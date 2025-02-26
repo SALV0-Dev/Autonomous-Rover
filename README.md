@@ -1,1 +1,1 @@
-*** Autononomous Rover Imaging and Controller Module
+## Autononomous Rover Imaging and Controller Modules
