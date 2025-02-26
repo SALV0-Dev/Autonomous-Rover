@@ -1,0 +1,36 @@
+# Service definition
+name: controller
+description: the authority on all steering decisions
+
+# No dependencies
+dependencies: 
+  - service: imaging
+    output: path
+
+# No outputs (You'll probably want to update this or `dependencies`)
+outputs:
+  - name: decision
+    address: tcp://localhost:9791
+
+# Runtime options
+options:
+  - name: speed
+    type: float
+    mutable: true
+    default: 0.2
+  - name: kp
+    type: float
+    mutable: true
+    default: 0.00325
+  - name: kd
+    type: float
+    mutable: true
+    default: 0.0005
+  - name: ki
+    type: float
+    mutable: true
+    default: 0
+  - name: desired-trajectory-point
+    type: int
+    mutable: false
+    default: 320 # 640 / 2
